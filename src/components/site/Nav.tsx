@@ -8,14 +8,22 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Newspaper, TestTube2 } from "lucide-react";
+import { FlaskConical, MessageCircle, Newspaper } from "lucide-react";
+import {
+  ClerkLoaded,
+  ClerkLoading,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
+import { Skeleton } from "../ui/skeleton";
 
 export function Nav() {
   return (
     <NavigationMenu>
       <NavigationMenuItem>
         <NavigationMenuTrigger>
-          <TestTube2 /> Catalyst
+          <FlaskConical /> Catalyst
         </NavigationMenuTrigger>
         <NavigationMenuContent>
           <NavigationMenuGrid
@@ -23,12 +31,12 @@ export function Nav() {
               <Button
                 variant="secondary"
                 href="/"
-                className="flex h-full w-full flex-col items-start justify-end gap-2 pt-16 text-left text-xl"
+                className="flex h-full w-full flex-col items-start justify-end gap-2 pt-16 text-left text-xl backdrop-blur-none"
               >
-                <TestTube2 />
+                <FlaskConical />
                 <h1>Catalyst</h1>
                 <p className="muted whitespace-break-spaces">
-                  A reimagined workspace for students
+                  A reimagined canvas for students
                 </p>
               </Button>
             }
@@ -79,7 +87,7 @@ export function Nav() {
         <NavigationMenuContent>
           <NavigationMenuGrid
             header={
-              <Button variant="secondary">
+              <Button variant="secondary" className="backdrop-blur-none">
                 <div className="flex h-full w-full flex-col content-start justify-end gap-2 pt-16 text-left text-xl">
                   <MessageCircle />
                   <h1>Contact</h1>
@@ -114,14 +122,6 @@ export function Nav() {
                 </p>
               </div>
             </Button>
-            <Button variant="ghost" className="h-auto justify-start">
-              <div className="flex flex-col gap-1 text-left">
-                <div className="font-bold">Social Contact</div>
-                <p className="muted whitespace-break-spaces">
-                  Page of socials to contact us.
-                </p>
-              </div>
-            </Button>
           </NavigationMenuGrid>
         </NavigationMenuContent>
       </NavigationMenuItem>
@@ -134,7 +134,28 @@ export function Nav() {
       <div className="!ml-auto" />
       <NavigationMenuItem>
         <NavigationMenuLink asChild>
-          <Button href="/account">Get Started</Button>
+          <button>
+            <SignedOut>
+              <Button href="/account/sign-in">Sign In</Button>
+            </SignedOut>
+            <SignedIn>
+              <div className="flex items-center gap-4">
+                <Button href="/app">Go to App</Button>
+                <div className="grid h-8 w-8">
+                  <ClerkLoading>
+                    <div className="col-start-1 row-start-1">
+                      <Skeleton className="h-8 w-8 rounded-full" />
+                    </div>
+                  </ClerkLoading>
+                  <ClerkLoaded>
+                    <div className="col-start-1 row-start-1">
+                      <UserButton />
+                    </div>
+                  </ClerkLoaded>
+                </div>
+              </div>
+            </SignedIn>
+          </button>
         </NavigationMenuLink>
       </NavigationMenuItem>
     </NavigationMenu>

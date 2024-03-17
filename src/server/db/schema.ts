@@ -29,8 +29,9 @@ export const users = createTable(
     updatedAt: timestamp("updatedAt"),
     firstName: varchar("first_name", { length: 16 }),
     lastName: varchar("last_name", { length: 16 }),
-    email: varchar("email", { length: 128 }),
+    email: varchar("email", { length: 64 }),
     password: varchar("password", { length: 256 }),
+    setup: varchar("setup", { length: 32 }),
   },
   (col) => ({
     idIndex: index("id_idx").on(col.id),

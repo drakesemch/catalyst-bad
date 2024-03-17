@@ -12,7 +12,8 @@ const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>
 >(({ className, children, ...props }, ref) => (
-  <div className="flex justify-center border-b p-2">
+  <div className="realtive sticky top-0 z-20 flex justify-center p-2">
+    <div className="absolute inset-0 h-[calc(100%+4rem)] bg-[linear-gradient(to_bottom,color-mix(in_lch,hsl(var(--background))_30%,transparent)_20%,transparent_90%)] backdrop-blur-xl [mask-image:linear-gradient(to_bottom,black_50%,transparent)]" />
     <NavigationMenuPrimitive.Root
       ref={ref}
       className={cn(
@@ -46,7 +47,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
 const NavigationMenuItem = NavigationMenuPrimitive.Item;
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex gap-2 h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary/50 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50",
+  "group inline-flex gap-2 h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary/50 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50",
 );
 
 const NavigationMenuTrigger = React.forwardRef<
@@ -116,7 +117,7 @@ const NavigationMenuViewport = React.forwardRef<
   <div className={cn("absolute left-0 top-full flex justify-start")}>
     <NavigationMenuPrimitive.Viewport
       className={cn(
-        "origin-top-center relative mt-3.5 h-[var(--radix-navigation-menu-viewport-height)] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-lg transition-all data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",
+        "origin-top-center relative mt-3.5 h-[var(--radix-navigation-menu-viewport-height)] overflow-hidden rounded-md bg-popover/50 text-popover-foreground shadow-lg backdrop-blur transition-all data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",
         className,
       )}
       ref={ref}
