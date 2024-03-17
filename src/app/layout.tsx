@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import "@/styles/clerk.css";
-import { Providers, ThemeProvider } from "@/components/misc/providers";
+import { Providers } from "@/components/misc/providers";
 
 import { Inter } from "next/font/google";
 
@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <body
         className={cn(
-          "bg-background min-h-screen font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased",
           inter.variable,
         )}
       >
