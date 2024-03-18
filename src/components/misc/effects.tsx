@@ -4,7 +4,7 @@ export function Background({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "absolute inset-0 -ml-[max(calc((100vw-120ch+4rem)/2),0px)] w-screen overflow-hidden bg-background contrast-more:hidden",
+        "absolute inset-0 -ml-[max(calc((100vw-120ch+5rem)/2),0px)] w-screen overflow-hidden bg-background contrast-more:hidden",
         className,
       )}
     >

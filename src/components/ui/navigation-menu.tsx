@@ -16,7 +16,7 @@ const NavigationMenu = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>
 >(({ className, children, ...props }, ref) => (
   <div className="realtive fixed bottom-0 z-20 flex w-full justify-center p-2 sm:sticky sm:top-0">
-    <div className="absolute bottom-0 h-[calc(100%+4rem)] w-full bg-[linear-gradient(to_top,color-mix(in_lch,hsl(var(--background))_30%,transparent)_20%,transparent_90%)] backdrop-blur-xl [mask-image:linear-gradient(to_top,black_50%,transparent)] sm:top-0 sm:bg-[linear-gradient(to_bottom,color-mix(in_lch,hsl(var(--background))_30%,transparent)_20%,transparent_90%)] sm:[mask-image:linear-gradient(to_bottom,black_50%,transparent)]" />
+    <div className="absolute bottom-0 h-[calc(100%+4rem)] w-full bg-[linear-gradient(to_top,color-mix(in_lch,hsl(var(--background))_30%,transparent)_20%,transparent_90%)] backdrop-blur-xl [mask-image:linear-gradient(to_top,black_50%,transparent)] contrast-more:!h-[100%] contrast-more:!bg-background contrast-more:!blur-0 contrast-more:![mask-image:unset] sm:top-0 sm:bg-[linear-gradient(to_bottom,color-mix(in_lch,hsl(var(--background))_30%,transparent)_20%,transparent_90%)] sm:[mask-image:linear-gradient(to_bottom,black_50%,transparent)]" />
     <NavigationMenuPrimitive.Root
       ref={ref}
       className={cn(
