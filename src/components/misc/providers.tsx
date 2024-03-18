@@ -6,12 +6,14 @@ import { type ThemeProviderProps } from "next-themes/dist/types";
 import { TooltipProvider } from "../ui/tooltip";
 import { ClerkProvider, MultisessionAppSupport } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { env } from "@/env";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Analytics />
+      <SpeedInsights />
       <ClerkProvider publishableKey={env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
         <MultisessionAppSupport>
           <ThemeProvider
