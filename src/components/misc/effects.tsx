@@ -9,17 +9,17 @@ export function Background({ className }: { className?: string }) {
       )}
     >
       <Filters />
-      <div className="relative h-full w-full blur-[8vw]">
-        <div className="animate-blob-1 absolute right-[50%] top-[30%] h-[24vw] w-[24vw] rounded-full bg-green-200 [transform-origin:calc(50%-300px)] motion-reduce:animate-none dark:bg-green-800" />
-        <div className="animate-blob-2 absolute right-[40%] top-[50%] h-[18vw] w-[18vw] rounded-full bg-green-400 [transform-origin:calc(50%-100px)] motion-reduce:animate-none dark:bg-green-600" />
-        <div className="animate-blob-3 absolute right-[20%] top-[40%] h-[42vw] w-[42vw] rounded-full bg-green-500 [transform-origin:calc(50%-200px)] motion-reduce:animate-none dark:bg-green-500" />
-        <div className="animate-blob-4 absolute right-[10%] top-[20%] h-[23vw] w-[23vw] rounded-full bg-green-300 [transform-origin:calc(50%+400px)] motion-reduce:animate-none dark:bg-green-700" />
-        <div className="animate-blob-5 absolute right-[30%] top-[10%] h-[40vw] w-[40vw] rounded-full bg-green-400 [transform-origin:calc(50%+200px)] motion-reduce:animate-none dark:bg-green-600" />
-        <div className="animate-blob-1 absolute right-[60%] top-[20%] h-[32vw] w-[32vw] rounded-full bg-green-600 [transform-origin:calc(50%+100px)] motion-reduce:animate-none dark:bg-green-400" />
-        <div className="animate-blob-2 absolute right-[70%] top-[60%] h-[41vw] w-[41vw] rounded-full bg-green-300 [transform-origin:calc(50%+300px)] motion-reduce:animate-none dark:bg-green-700" />
-        <div className="animate-blob-3 absolute right-[80%] top-[40%] h-[20vw] w-[20vw] rounded-full bg-green-200 [transform-origin:calc(50%+400px)] motion-reduce:animate-none dark:bg-green-800" />
-        <div className="animate-blob-4 absolute right-[90%] top-[70%] h-[16vw] w-[16vw] rounded-full bg-green-100 [transform-origin:calc(50%+200px)] motion-reduce:animate-none dark:bg-green-900" />
-        <div className="animate-blob-5 absolute right-[70%] top-[80%] h-[12vw] w-[12vw] rounded-full bg-green-400 [transform-origin:calc(50%+100px)] motion-reduce:animate-none dark:bg-green-600" />
+      <div className="relative h-full w-full blur-[max(8vw,8vh,2rem)]">
+        <div className="absolute right-[50%] top-[30%] h-[24vw] w-[24vw] animate-blob-1 rounded-full bg-green-200 [transform-origin:calc(50%-300px)] motion-reduce:animate-none dark:bg-green-800" />
+        <div className="absolute right-[40%] top-[50%] h-[18vw] w-[18vw] animate-blob-2 rounded-full bg-green-400 [transform-origin:calc(50%-100px)] motion-reduce:animate-none dark:bg-green-600" />
+        <div className="absolute right-[20%] top-[40%] h-[42vw] w-[42vw] animate-blob-3 rounded-full bg-green-500 [transform-origin:calc(50%-200px)] motion-reduce:animate-none dark:bg-green-500" />
+        <div className="absolute right-[10%] top-[20%] h-[23vw] w-[23vw] animate-blob-4 rounded-full bg-green-300 [transform-origin:calc(50%+400px)] motion-reduce:animate-none dark:bg-green-700" />
+        <div className="absolute right-[30%] top-[10%] h-[40vw] w-[40vw] animate-blob-5 rounded-full bg-green-400 [transform-origin:calc(50%+200px)] motion-reduce:animate-none dark:bg-green-600" />
+        <div className="absolute right-[60%] top-[20%] h-[32vw] w-[32vw] animate-blob-1 rounded-full bg-green-600 [transform-origin:calc(50%+100px)] motion-reduce:animate-none dark:bg-green-400" />
+        <div className="absolute right-[70%] top-[60%] h-[41vw] w-[41vw] animate-blob-2 rounded-full bg-green-300 [transform-origin:calc(50%+300px)] motion-reduce:animate-none dark:bg-green-700" />
+        <div className="absolute right-[80%] top-[40%] h-[20vw] w-[20vw] animate-blob-3 rounded-full bg-green-200 [transform-origin:calc(50%+400px)] motion-reduce:animate-none dark:bg-green-800" />
+        <div className="absolute right-[90%] top-[70%] h-[16vw] w-[16vw] animate-blob-4 rounded-full bg-green-100 [transform-origin:calc(50%+200px)] motion-reduce:animate-none dark:bg-green-900" />
+        <div className="absolute right-[70%] top-[80%] h-[12vw] w-[12vw] animate-blob-5 rounded-full bg-green-400 [transform-origin:calc(50%+100px)] motion-reduce:animate-none dark:bg-green-600" />
       </div>
       <div className="absolute inset-0 bg-background/60" />
       <Grain />

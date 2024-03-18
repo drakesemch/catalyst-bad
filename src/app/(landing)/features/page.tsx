@@ -232,7 +232,7 @@ export default function FeaturesPage() {
             <feature.Icon className="!h-[1em] !w-[1em]" /> {feature.title}
           </h2>
           <p className="muted mt-2">{feature.description}</p>
-          <div className="mt-4 grid grid-cols-3 gap-4">
+          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {feature.subFeatures.map((subFeature) => (
               <div
                 key={subFeature.title}

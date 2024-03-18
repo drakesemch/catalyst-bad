@@ -3,17 +3,20 @@
 import * as React from "react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cva } from "class-variance-authority";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { Button } from "./button";
+
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>
 >(({ className, children, ...props }, ref) => (
-  <div className="realtive sticky top-0 z-20 flex justify-center p-2">
-    <div className="absolute inset-0 h-[calc(100%+4rem)] bg-[linear-gradient(to_bottom,color-mix(in_lch,hsl(var(--background))_30%,transparent)_20%,transparent_90%)] backdrop-blur-xl [mask-image:linear-gradient(to_bottom,black_50%,transparent)]" />
+  <div className="realtive fixed bottom-0 z-20 flex w-full justify-center p-2 sm:sticky sm:top-0">
+    <div className="absolute bottom-0 h-[calc(100%+4rem)] w-full bg-[linear-gradient(to_top,color-mix(in_lch,hsl(var(--background))_30%,transparent)_20%,transparent_90%)] backdrop-blur-xl [mask-image:linear-gradient(to_top,black_50%,transparent)] sm:top-0 sm:bg-[linear-gradient(to_bottom,color-mix(in_lch,hsl(var(--background))_30%,transparent)_20%,transparent_90%)] sm:[mask-image:linear-gradient(to_bottom,black_50%,transparent)]" />
     <NavigationMenuPrimitive.Root
       ref={ref}
       className={cn(
@@ -75,7 +78,7 @@ const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      "left-0 top-0 w-[calc(1*15rem)] data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-[calc(2*15rem)]",
+      "left-0 top-0 w-[calc(1*20rem)] data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-[calc(2*15rem)]",
       className,
     )}
     {...props}
@@ -160,7 +163,7 @@ function NavigationMenuGrid({
   return (
     <div
       className={cn(
-        `grid w-full grid-cols-1 md:grid-cols-${columns + 1} gap-2 ${/*grid-rows-${(children as React.ReactNode[]).length + 1}*/ 0} ${/*md:grid-rows-${(children as React.ReactNode[]).length}*/ 0} md:grid-rows-${Math.ceil((children as React.ReactNode[]).length / columns)} p-4`,
+        `grid w-full grid-cols-1 md:grid-cols-${columns + 1} gap-2 md:grid-rows-${Math.ceil((children as React.ReactNode[]).length / columns)} p-4`,
         className,
       )}
     >
@@ -176,6 +179,30 @@ function NavigationMenuGrid({
   );
 }
 
+function NavigationMenuHamburger({
+  mobile,
+  children,
+}: {
+  mobile: React.ReactNode;
+  children: React.ReactNode;
+}) {
+  return (
+    <>
+      <div className="hidden gap-2 sm:flex ">{children}</div>
+      <Drawer>
+        <DrawerTrigger asChild>
+          <Button className="flex sm:hidden" size="icon" variant="secondary">
+            <Menu />
+          </Button>
+        </DrawerTrigger>
+        <DrawerContent>
+          <div className="flex flex-col gap-2 p-4">{mobile}</div>
+        </DrawerContent>
+      </Drawer>
+    </>
+  );
+}
+
 export {
   navigationMenuTriggerStyle,
   NavigationMenu,
@@ -186,5 +213,6 @@ export {
   NavigationMenuLink,
   NavigationMenuIndicator,
   NavigationMenuViewport,
+  NavigationMenuHamburger,
   NavigationMenuGrid,
 };
