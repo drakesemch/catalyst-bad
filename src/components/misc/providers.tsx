@@ -10,7 +10,8 @@ import { env } from "@/env";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <Analytics>
+    <>
+      <Analytics />
       <ClerkProvider publishableKey={env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
         <MultisessionAppSupport>
           <ThemeProvider
@@ -23,7 +24,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           </ThemeProvider>
         </MultisessionAppSupport>
       </ClerkProvider>
-    </Analytics>
+    </>
   );
 }
 
