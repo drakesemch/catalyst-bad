@@ -149,7 +149,7 @@ export function Nav() {
       <div className="!ml-auto" />
       <NavigationMenuItem>
         <NavigationMenuLink asChild>
-          <Button href="/account/sign-in">Sign In</Button>
+          <Button href="/account">Sign In</Button>
         </NavigationMenuLink>
       </NavigationMenuItem>
     </NavigationMenu>
