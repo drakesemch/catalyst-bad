@@ -1,6 +1,5 @@
 import { Background } from "@/components/misc/effects";
 import { Button } from "@/components/ui/button";
-import { SignedIn, SignedOut } from "@clerk/nextjs";
 import {
   ArrowRight,
   Blocks,
@@ -146,12 +145,7 @@ export default function HomePage() {
               <Button variant="secondary" href="#features">
                 Learn More
               </Button>
-              <SignedOut>
-                <Button href="/account/sign-in">Sign In</Button>
-              </SignedOut>
-              <SignedIn>
-                <Button href="/app">Go to App</Button>
-              </SignedIn>
+              <Button href="/account">Sign In</Button>
             </div>
           </div>
           <Background />

@@ -15,13 +15,6 @@ import {
   MessageCircle,
   Newspaper,
 } from "lucide-react";
-import {
-  ClerkLoaded,
-  ClerkLoading,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
 import { Skeleton } from "../ui/skeleton";
 
 export function Nav() {
@@ -156,28 +149,7 @@ export function Nav() {
       <div className="!ml-auto" />
       <NavigationMenuItem>
         <NavigationMenuLink asChild>
-          <button>
-            <SignedOut>
-              <Button href="/account/sign-in">Sign In</Button>
-            </SignedOut>
-            <SignedIn>
-              <div className="flex items-center gap-4">
-                <Button href="/app">Go to App</Button>
-                <div className="grid h-8 w-8">
-                  <ClerkLoading>
-                    <div className="col-start-1 row-start-1">
-                      <Skeleton className="h-8 w-8 rounded-full" />
-                    </div>
-                  </ClerkLoading>
-                  <ClerkLoaded>
-                    <div className="col-start-1 row-start-1">
-                      <UserButton />
-                    </div>
-                  </ClerkLoaded>
-                </div>
-              </div>
-            </SignedIn>
-          </button>
+          <Button href="/account/sign-in">Sign In</Button>
         </NavigationMenuLink>
       </NavigationMenuItem>
     </NavigationMenu>
