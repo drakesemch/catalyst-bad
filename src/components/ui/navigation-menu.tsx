@@ -5,18 +5,18 @@ import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cva } from "class-variance-authority";
 import { ChevronDown, Menu } from "lucide-react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "~/lib/utils";
 import Link from "next/link";
 import { Button } from "./button";
 
-import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
+import { Drawer, DrawerContent, DrawerTrigger } from "~/components/ui/drawer";
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>
 >(({ className, children, ...props }, ref) => (
   <div className="realtive fixed bottom-0 z-20 flex w-full justify-center p-2 sm:sticky sm:top-0">
-    <div className="absolute bottom-0 h-[calc(100%+4rem)] w-full bg-[linear-gradient(to_top,color-mix(in_lch,hsl(var(--background))_30%,transparent)_20%,transparent_90%)] backdrop-blur-xl [mask-image:linear-gradient(to_top,black_50%,transparent)] contrast-more:!h-[100%] contrast-more:!bg-background contrast-more:!blur-0 contrast-more:![mask-image:unset] sm:top-0 sm:bg-[linear-gradient(to_bottom,color-mix(in_lch,hsl(var(--background))_30%,transparent)_20%,transparent_90%)] sm:[mask-image:linear-gradient(to_bottom,black_50%,transparent)]" />
+    <div className="contrast-more:!bg-background absolute bottom-0 h-[calc(100%+4rem)] w-full bg-[linear-gradient(to_top,color-mix(in_lch,hsl(var(--background))_30%,transparent)_20%,transparent_90%)] backdrop-blur-xl [mask-image:linear-gradient(to_top,black_50%,transparent)] contrast-more:!h-[100%] contrast-more:!blur-0 contrast-more:![mask-image:unset] sm:top-0 sm:bg-[linear-gradient(to_bottom,color-mix(in_lch,hsl(var(--background))_30%,transparent)_20%,transparent_90%)] sm:[mask-image:linear-gradient(to_bottom,black_50%,transparent)]" />
     <NavigationMenuPrimitive.Root
       ref={ref}
       className={cn(
@@ -78,7 +78,7 @@ const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      "left-0 top-0 w-[calc(1*20rem)] data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-[calc(2*15rem)]",
+      "data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 left-0 top-0 w-[calc(1*20rem)] md:absolute md:w-[calc(2*15rem)]",
       className,
     )}
     {...props}
@@ -120,7 +120,7 @@ const NavigationMenuViewport = React.forwardRef<
   <div className={cn("absolute left-0 top-full flex justify-start")}>
     <NavigationMenuPrimitive.Viewport
       className={cn(
-        "origin-top-center relative mt-3.5 h-[var(--radix-navigation-menu-viewport-height)] overflow-hidden rounded-md bg-popover/50 text-popover-foreground shadow-lg backdrop-blur transition-all data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",
+        "origin-top-center bg-popover/50 text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 relative mt-3.5 h-[var(--radix-navigation-menu-viewport-height)] overflow-hidden rounded-md shadow-lg backdrop-blur transition-all md:w-[var(--radix-navigation-menu-viewport-width)]",
         className,
       )}
       ref={ref}
@@ -138,12 +138,12 @@ const NavigationMenuIndicator = React.forwardRef<
   <NavigationMenuPrimitive.Indicator
     ref={ref}
     className={cn(
-      "top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in",
+      "data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden",
       className,
     )}
     {...props}
   >
-    <div className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-border shadow-md" />
+    <div className="bg-border relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md" />
   </NavigationMenuPrimitive.Indicator>
 ));
 NavigationMenuIndicator.displayName =

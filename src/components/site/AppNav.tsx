@@ -6,9 +6,9 @@ import {
   NavigationMenuTrigger,
   NavigationMenuLink,
   NavigationMenuHamburger,
-} from "@/components/ui/navigation-menu";
+} from "~/components/ui/navigation-menu";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "~/components/ui/button";
 import {
   ArrowRight,
   FlaskConical,
@@ -149,7 +149,7 @@ export function AppNav() {
       <div className="!ml-auto" />
       <NavigationMenuItem>
         <NavigationMenuLink asChild>
-          <Button href="/account/sign-in">Sign In</Button>
+          <Button href="/account">Sign In</Button>
         </NavigationMenuLink>
       </NavigationMenuItem>
     </NavigationMenu>
