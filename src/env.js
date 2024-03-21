@@ -20,6 +20,9 @@ export const env = createEnv({
           ),
         "Please change the URL to your own database URL. We recommend using CockroachDB or something similar.",
       ),
+    SENTRY_AUTH_TOKEN: z.string().length(64, {
+      message: "Sentry Auth Token should be 64 characters long",
+    }),
     SENTRY_ORG: z.string(),
     SENTRY_PROJECT: z.string(),
     NEXTAUTH_SECRET:
@@ -89,6 +92,7 @@ export const env = createEnv({
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     DATABASE_URL: process.env.DATABASE_URL,
+    SENTRY_AUTH_TOKEN: process.env.SENTRY_AUTH_TOKEN,
     SENTRY_ORG: process.env.SENTRY_ORG,
     SENTRY_PROJECT: process.env.SENTRY_PROJECT,
     NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN,
