@@ -85,7 +85,11 @@ export const env = createEnv({
         (str) =>
           !str.includes("phc_abcdefghijklmnopqrstuvwxyz0123456789ABCDEFG"),
       ),
-    NEXT_PUBLIC_POSTHOG_HOST: z.string().url({
+    NEXT_PUBLIC_POSTHOG_API_HOST: z.preprocess(
+      (str) => process.env.VERCEL_URL ?? str,
+      process.env.VERCEL ? z.string() : z.string().url(),
+    ),
+    NEXT_PUBLIC_POSTHOG_UI_HOST: z.string().url({
       message: "PostHog host must be a URL",
     }),
   },
@@ -101,7 +105,8 @@ export const env = createEnv({
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
-    NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+    NEXT_PUBLIC_POSTHOG_API_HOST: process.env.NEXT_PUBLIC_POSTHOG_API_HOST,
+    NEXT_PUBLIC_POSTHOG_UI_HOST: process.env.NEXT_PUBLIC_POSTHOG_UI_HOST,
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
   emptyStringAsUndefined: true,
