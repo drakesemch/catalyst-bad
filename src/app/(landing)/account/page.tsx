@@ -1,14 +1,14 @@
 "use client";
 
-import { GoogleLogo, MicrosoftLogo } from "@/components/icons";
-import { Button } from "@/components/ui/button";
+import { GoogleLogo, MicrosoftLogo } from "~/components/icons";
+import { Button } from "~/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "~/components/ui/card";
 
 import { signIn } from "next-auth/react";
 

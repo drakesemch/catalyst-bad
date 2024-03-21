@@ -6,9 +6,9 @@ import {
   NavigationMenuTrigger,
   NavigationMenuLink,
   NavigationMenuHamburger,
-} from "@/components/ui/navigation-menu";
+} from "~/components/ui/navigation-menu";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "~/components/ui/button";
 import {
   ArrowRight,
   FlaskConical,

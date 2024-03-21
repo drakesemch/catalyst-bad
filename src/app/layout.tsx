@@ -1,9 +1,8 @@
-import { cn } from "@/lib/utils";
-import "@/styles/globals.css";
-import "@/styles/clerk.css";
-import { Providers } from "@/components/misc/providers";
+import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
+
+import { TRPCReactProvider } from "~/trpc/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,14 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          inter.variable,
-        )}
-      >
-        <Providers>{children}</Providers>
+    <html lang="en">
+      <body className={`font-sans ${inter.variable}`}>
+        <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
   );

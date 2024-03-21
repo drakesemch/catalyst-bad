@@ -1,5 +1,5 @@
-import { Background } from "@/components/misc/effects";
-import { Button } from "@/components/ui/button";
+import { Background } from "~/components/misc/effects";
+import { Button } from "~/components/ui/button";
 import {
   ArrowRight,
   Blocks,
@@ -132,13 +132,13 @@ export default function HomePage() {
           <div className="z-10 flex flex-col gap-2 pl-10">
             <h1 className="text-lg font-bold">Welcome to</h1>
             <h1 className="h1 flex gap-2">
-              <div className="grid size-[1em] place-items-center rounded-full bg-secondary/50">
+              <div className="bg-secondary/50 grid size-[1em] place-items-center rounded-full">
                 <FlaskConical className="!size-[.5em]" />
               </div>
               Catalyst
             </h1>
-            <div className="mt-2 h-1 w-8 rounded-full bg-primary/50" />
-            <p className="text-sm text-foreground/50">
+            <div className="bg-primary/50 mt-2 h-1 w-8 rounded-full" />
+            <p className="text-foreground/50 text-sm">
               Say hello to a reimagined canvas for students.
             </p>
             <div className="flex gap-2">
@@ -161,7 +161,7 @@ export default function HomePage() {
             >
               <feature.Icon className="!size-[3rem]" />
               <h2 className="h3">{feature.title}</h2>
-              <p className="text-sm text-foreground/50">
+              <p className="text-foreground/50 text-sm">
                 {feature.description}
               </p>
               <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
