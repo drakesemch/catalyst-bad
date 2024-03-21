@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
+import { TRPCReactProvider } from "~/trpc/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import { type ThemeProviderProps } from "next-themes/dist/types";
 import { TooltipProvider } from "../ui/tooltip";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
@@ -17,20 +17,18 @@ if (typeof window !== "undefined") {
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <PostHogProvider client={posthog}>
-        <ThemeProvider
+      <TRPCReactProvider>
+        <NextThemesProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <TooltipProvider>{children}</TooltipProvider>
-        </ThemeProvider>
-      </PostHogProvider>
+          <PostHogProvider client={posthog}>
+            <TooltipProvider>{children}</TooltipProvider>
+          </PostHogProvider>
+        </NextThemesProvider>
+      </TRPCReactProvider>
     </>
   );
-}
-
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
 }
