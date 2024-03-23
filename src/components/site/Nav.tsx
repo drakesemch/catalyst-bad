@@ -5,7 +5,11 @@ import {
   NavigationMenuGrid,
   NavigationMenuTrigger,
   NavigationMenuLink,
-  NavigationMenuHamburger,
+  HamburgerMenu,
+  HamburgerMenuItem,
+  HamburgerMenuTrigger,
+  HamburgerMenuContent,
+  HamburgerMenuLink,
 } from "~/components/ui/navigation-menu";
 
 import { Button } from "~/components/ui/button";
@@ -15,23 +19,60 @@ import {
   MessageCircle,
   Newspaper,
 } from "lucide-react";
-import { Skeleton } from "../ui/skeleton";
+import { AppButton } from "~/components/site/app-button";
 
 export function Nav() {
   return (
     <NavigationMenu>
-      <NavigationMenuHamburger
+      <HamburgerMenu
         mobile={
           <>
-            <Button variant="ghost" className="justify-start">
-              <FlaskConical /> Catalyst <ArrowRight className="ml-auto" />
-            </Button>
-            <Button variant="ghost" className="justify-start">
-              <MessageCircle /> Contact <ArrowRight className="ml-auto" />
-            </Button>
-            <Button variant="ghost" className="justify-start" href="/blog">
+            <HamburgerMenuItem>
+              <HamburgerMenuTrigger>
+                <FlaskConical /> Catalyst <ArrowRight className="ml-auto" />
+              </HamburgerMenuTrigger>
+              <HamburgerMenuContent>
+                <Button variant="ghost" className="justify-start" href="/">
+                  Home
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  href="/features"
+                >
+                  Features
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  href="/about-us"
+                >
+                  About Us
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  href="/pricing"
+                >
+                  Pricing
+                </Button>
+              </HamburgerMenuContent>
+            </HamburgerMenuItem>
+            <HamburgerMenuItem>
+              <HamburgerMenuTrigger>
+                <MessageCircle /> Contact <ArrowRight className="ml-auto" />
+              </HamburgerMenuTrigger>
+              <HamburgerMenuContent>
+                <Button variant="ghost">Contact</Button>
+                <Button variant="ghost">Send Feedback</Button>
+                <Button variant="ghost">Support</Button>
+                <Button variant="ghost">Contact Us</Button>
+              </HamburgerMenuContent>
+            </HamburgerMenuItem>
+            <HamburgerMenuLink href="/blog">
               <Newspaper /> Blog
-            </Button>
+            </HamburgerMenuLink>
+            <AppButton className="mt-4 w-full" />
           </>
         }
       >
@@ -130,7 +171,7 @@ export function Nav() {
               </Button>
               <Button variant="ghost" className="h-auto justify-start">
                 <div className="flex flex-col gap-1 text-left">
-                  <div className="font-bold">Contact</div>
+                  <div className="font-bold">Contact Us</div>
                   <p className="muted whitespace-break-spaces">
                     Create a ticket and/or send us an email!
                   </p>
@@ -145,11 +186,13 @@ export function Nav() {
             Blog
           </NavigationMenuLink>
         </NavigationMenuItem>
-      </NavigationMenuHamburger>
+      </HamburgerMenu>
       <div className="!ml-auto" />
       <NavigationMenuItem>
         <NavigationMenuLink asChild>
-          <Button href="/account">Sign In</Button>
+          <span>
+            <AppButton className="w-full" />
+          </span>
         </NavigationMenuLink>
       </NavigationMenuItem>
     </NavigationMenu>
