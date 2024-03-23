@@ -1,5 +1,5 @@
-import { Footer } from "~/components/site/Footer";
-import { Nav } from "~/components/site/Nav";
+import { Footer } from "~/components/site/footer";
+import { Nav } from "~/components/site/nav";
 
 export default function LandingLayout({
   children,
@@ -9,7 +9,7 @@ export default function LandingLayout({
   return (
     <>
       <Nav />
-      <main className="bg-background relative z-10 m-auto max-w-[calc(120ch-4rem)]">
+      <main className="relative z-10 m-auto max-w-[calc(120ch-4rem)] bg-background">
         {children}
       </main>
       <Footer />

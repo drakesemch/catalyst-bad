@@ -36,6 +36,12 @@ export const env = createEnv({
       (str) => process.env.VERCEL_URL ?? str,
       process.env.VERCEL ? z.string() : z.string().url(),
     ),
+    NEXTAUTH_ENCRYPTION_KEY: z.string().length(32, {
+      message: "NEXTAUTH_ENCRYPTION_KEY should be 32 characters long",
+    }),
+    NEXTAUTH_ENCRYPTION_IV: z.string().length(16, {
+      message: "NEXTAUTH_ENCRYPTION_IV should be 16 characters long",
+    }),
     GOOGLE_CLIENT_ID: z
       .string()
       .length(73, {
@@ -102,6 +108,8 @@ export const env = createEnv({
     NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+    NEXTAUTH_ENCRYPTION_KEY: process.env.NEXTAUTH_ENCRYPTION_KEY,
+    NEXTAUTH_ENCRYPTION_IV: process.env.NEXTAUTH_ENCRYPTION_IV,
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,

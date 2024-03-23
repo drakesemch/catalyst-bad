@@ -19,9 +19,10 @@ import {
   Percent,
   Webhook,
 } from "lucide-react";
+import { AppButton } from "~/components/site/app-button";
 
-export default function HomePage() {
-  const fatures = [
+export default async function HomePage() {
+  const features = [
     {
       title: "Core Functionality",
       description:
@@ -125,6 +126,7 @@ export default function HomePage() {
       ],
     },
   ];
+
   return (
     <>
       <section className="-mt-[3.5625rem] h-screen w-full">
@@ -132,20 +134,20 @@ export default function HomePage() {
           <div className="z-10 flex flex-col gap-2 pl-10">
             <h1 className="text-lg font-bold">Welcome to</h1>
             <h1 className="h1 flex gap-2">
-              <div className="bg-secondary/50 grid size-[1em] place-items-center rounded-full">
+              <div className="grid size-[1em] place-items-center rounded-full bg-secondary/50">
                 <FlaskConical className="!size-[.5em]" />
               </div>
               Catalyst
             </h1>
-            <div className="bg-primary/50 mt-2 h-1 w-8 rounded-full" />
-            <p className="text-foreground/50 text-sm">
+            <div className="mt-2 h-1 w-8 rounded-full bg-primary/50" />
+            <p className="text-sm text-foreground/50">
               Say hello to a reimagined canvas for students.
             </p>
             <div className="flex gap-2">
               <Button variant="secondary" href="#features">
                 Learn More
               </Button>
-              <Button href="/account">Sign In</Button>
+              <AppButton />
             </div>
           </div>
           <Background />
@@ -154,14 +156,14 @@ export default function HomePage() {
       <section className="p-8" id="features">
         <h2 className="h3">App Features</h2>
         <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-2 lg:grid-cols-3">
-          {fatures.map((feature) => (
+          {features.map((feature) => (
             <div
               key={feature.title}
               className="flex min-h-96 flex-col justify-end gap-2 rounded-lg border p-4"
             >
               <feature.Icon className="!size-[3rem]" />
               <h2 className="h3">{feature.title}</h2>
-              <p className="text-foreground/50 text-sm">
+              <p className="text-sm text-foreground/50">
                 {feature.description}
               </p>
               <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">

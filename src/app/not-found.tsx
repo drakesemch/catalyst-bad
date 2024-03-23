@@ -1,5 +1,5 @@
 import { Background } from "~/components/misc/effects";
-import { Nav } from "~/components/site/Nav";
+import { Nav } from "~/components/site/nav";
 import { Button } from "~/components/ui/button";
 
 export default function HomePage() {
@@ -12,7 +12,7 @@ export default function HomePage() {
       <main className="absolute inset-0 m-auto flex max-w-[40ch] flex-col justify-center gap-2">
         <h1 className="text-6xl font-bold">404</h1>
         <h2 className="h3">Page Not Found</h2>
-        <div className="bg-primary/50 mt-2 h-1 w-8 rounded-full" />
+        <div className="mt-2 h-1 w-8 rounded-full bg-primary/50" />
         <p className="muted">
           Hmmm... It seems like that page doesn{"'"}t exists :/
         </p>

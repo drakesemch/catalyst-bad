@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 
 import { cn } from "~/lib/utils";
 import { Providers } from "~/components/misc/providers";
+import type { Session } from "next-auth";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,18 +19,20 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  session,
 }: {
   children: React.ReactNode;
+  session: Session;
 }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body
         className={cn(
-          "bg-background min-h-screen font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased",
           inter.variable,
         )}
       >
-        <Providers>{children}</Providers>
+        <Providers session={session}>{children}</Providers>
       </body>
     </html>
   );

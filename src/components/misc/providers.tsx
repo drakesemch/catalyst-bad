@@ -7,6 +7,8 @@ import { TooltipProvider } from "../ui/tooltip";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
 import { env } from "~/env";
+import { SessionProvider } from "next-auth/react";
+import type { Session } from "next-auth";
 
 if (typeof window !== "undefined") {
   posthog.init(env.NEXT_PUBLIC_POSTHOG_KEY, {
@@ -15,9 +17,15 @@ if (typeof window !== "undefined") {
   });
 }
 
-export function Providers({ children }: { children: React.ReactNode }) {
+export function Providers({
+  children,
+  session,
+}: {
+  children: React.ReactNode;
+  session: Session;
+}) {
   return (
-    <>
+    <SessionProvider session={session}>
       <TRPCReactProvider>
         <NextThemesProvider
           attribute="class"
@@ -30,6 +38,6 @@ export function Providers({ children }: { children: React.ReactNode }) {
           </PostHogProvider>
         </NextThemesProvider>
       </TRPCReactProvider>
-    </>
+    </SessionProvider>
   );
 }

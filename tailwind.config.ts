@@ -104,6 +104,22 @@ const config = {
             transform: "translateY(-50%)",
           },
         },
+        "slide-down": {
+          "0%": {
+            height: "0",
+          },
+          "100%": {
+            height: "var(--radix-collapsible-content-height)",
+          },
+        },
+        "slide-up": {
+          "0%": {
+            height: "var(--radix-collapsible-content-height)",
+          },
+          "100%": {
+            height: "0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -113,6 +129,8 @@ const config = {
         "blob-3": "move-circle 40s linear infinite",
         "blob-4": "move-horizontal 40s ease infinite",
         "blob-5": "move-circle 20s ease infinite",
+        "slide-down": "slide-down 0.2s ease-out",
+        "slide-up": "slide-up 0.2s ease-out",
       },
     },
   },
