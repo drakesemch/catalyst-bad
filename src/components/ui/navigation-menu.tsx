@@ -11,6 +11,7 @@ import { Button } from "./button";
 
 import { Drawer, DrawerContent, DrawerTrigger } from "~/components/ui/drawer";
 import { useEffect } from "react";
+import { Separator } from "./separator";
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
@@ -306,9 +307,10 @@ function HamburgerMenu({
                     id="secondary-menu-ref"
                   >
                     {renderContent}
-                    <div className="sticky bottom-0 border-t">
+                    <Separator />
+                    <div className="sticky bottom-0">
                       <Button
-                        variant="link"
+                        variant="ghost"
                         className="w-full justify-start"
                         onClick={() => {
                           setMainMenu(true);

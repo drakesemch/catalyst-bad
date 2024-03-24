@@ -63,10 +63,18 @@ export function Nav() {
                 <MessageCircle /> Contact <ArrowRight className="ml-auto" />
               </HamburgerMenuTrigger>
               <HamburgerMenuContent>
-                <Button variant="ghost">Contact</Button>
-                <Button variant="ghost">Send Feedback</Button>
-                <Button variant="ghost">Support</Button>
-                <Button variant="ghost">Contact Us</Button>
+                <Button variant="ghost" className="justify-start">
+                  Contact
+                </Button>
+                <Button variant="ghost" className="justify-start">
+                  Send Feedback
+                </Button>
+                <Button variant="ghost" className="justify-start">
+                  Support
+                </Button>
+                <Button variant="ghost" className="justify-start">
+                  Contact Us
+                </Button>
               </HamburgerMenuContent>
             </HamburgerMenuItem>
             <HamburgerMenuLink href="/blog">
@@ -78,7 +86,7 @@ export function Nav() {
       >
         <NavigationMenuItem>
           <NavigationMenuTrigger>
-            <FlaskConical /> Catalyst
+            <FlaskConical className="!size-[1rem]" /> Catalyst
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <NavigationMenuGrid
@@ -89,8 +97,8 @@ export function Nav() {
                   className="flex h-full w-full flex-col items-start justify-end gap-2 pt-16 text-left text-xl backdrop-blur-none"
                 >
                   <FlaskConical />
-                  <h1>Catalyst</h1>
-                  <p className="muted whitespace-break-spaces">
+                  <h1 className="!text-lg font-bold">Catalyst</h1>
+                  <p className="muted !mt-0 whitespace-break-spaces">
                     A reimagined canvas for students
                   </p>
                 </Button>
@@ -103,7 +111,7 @@ export function Nav() {
               >
                 <div className="flex flex-col gap-1 text-left">
                   <div className="font-bold">Features</div>
-                  <p className="muted whitespace-break-spaces">
+                  <p className="muted !mt-0 whitespace-break-spaces">
                     All the cool shit we have.
                   </p>
                 </div>
@@ -115,7 +123,7 @@ export function Nav() {
               >
                 <div className="flex flex-col gap-1 text-left">
                   <div className="font-bold">About Us</div>
-                  <p className="muted whitespace-break-spaces">
+                  <p className="muted !mt-0 whitespace-break-spaces">
                     Who we are and what we do.
                   </p>
                 </div>
@@ -127,7 +135,7 @@ export function Nav() {
               >
                 <div className="flex flex-col gap-1 text-left">
                   <div className="font-bold">Pricing</div>
-                  <p className="muted whitespace-break-spaces">
+                  <p className="muted !mt-0 whitespace-break-spaces">
                     Well... it{"'"}s free!
                   </p>
                 </div>
@@ -137,7 +145,7 @@ export function Nav() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>
-            <MessageCircle /> Contact
+            <MessageCircle className="!size-[1rem]" /> Contact
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <NavigationMenuGrid
@@ -145,8 +153,8 @@ export function Nav() {
                 <Button variant="secondary" className="backdrop-blur-none">
                   <div className="flex h-full w-full flex-col content-start justify-end gap-2 pt-16 text-left text-xl">
                     <MessageCircle />
-                    <h1>Contact</h1>
-                    <p className="muted whitespace-break-spaces">
+                    <h1 className="!text-lg font-bold">Contact</h1>
+                    <p className="muted !mt-0 whitespace-break-spaces">
                       Ways to send feedback, get support, and contact us.
                     </p>
                   </div>
@@ -156,7 +164,7 @@ export function Nav() {
               <Button variant="ghost" className="h-auto justify-start">
                 <div className="flex flex-col gap-1 text-left">
                   <div className="font-bold">Send Feedback</div>
-                  <p className="muted whitespace-break-spaces">
+                  <p className="muted !mt-0 whitespace-break-spaces">
                     Give us feedback on what went well / didn{"'"}t go so well.
                   </p>
                 </div>
@@ -164,7 +172,7 @@ export function Nav() {
               <Button variant="ghost" className="h-auto justify-start">
                 <div className="flex flex-col gap-1 text-left">
                   <div className="font-bold">Support</div>
-                  <p className="muted whitespace-break-spaces">
+                  <p className="muted !mt-0 whitespace-break-spaces">
                     Get help using the application.
                   </p>
                 </div>
@@ -172,7 +180,7 @@ export function Nav() {
               <Button variant="ghost" className="h-auto justify-start">
                 <div className="flex flex-col gap-1 text-left">
                   <div className="font-bold">Contact Us</div>
-                  <p className="muted whitespace-break-spaces">
+                  <p className="muted !mt-0 whitespace-break-spaces">
                     Create a ticket and/or send us an email!
                   </p>
                 </div>
@@ -182,7 +190,7 @@ export function Nav() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink href="/blog">
-            <Newspaper />
+            <Newspaper className="!size-[1rem]" />
             Blog
           </NavigationMenuLink>
         </NavigationMenuItem>

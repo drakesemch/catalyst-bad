@@ -42,3 +42,6 @@ yarn-error.log*
 
 # Sentry Config File
 .sentryclirc
+
+# Items saved in storage
+blogs
