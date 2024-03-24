@@ -12,6 +12,12 @@ import moment from "moment";
 import { Separator } from "@/components/ui/separator";
 import { ArrowRight } from "lucide-react";
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
 export const revalidate = 30;
 
 export default async function BlogPage() {
@@ -71,7 +77,14 @@ export default async function BlogPage() {
                     orientation="vertical"
                     className="h-[1rem] w-0.5"
                   />
-                  {moment(post.postDate + " GMT").calendar()}
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <span>{moment(post.postDate + " GMT").calendar()}</span>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      {moment(post.postDate + " GMT").format("LLLL")}
+                    </TooltipContent>
+                  </Tooltip>
                 </CardDescription>
               </CardHeader>
               <CardContent>

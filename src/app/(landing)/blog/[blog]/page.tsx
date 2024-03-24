@@ -13,6 +13,12 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
 export const revalidate = 30;
 
 export default async function BlogPage({
@@ -60,13 +66,12 @@ export default async function BlogPage({
     .replaceAll(new RegExp("(?<=<code)(?=>)", "gm"), ' class="inline snippet"')
     .replaceAll(new RegExp("(?<=<pre)(?=>)", "gm"), ' class="snippet"')
     .replaceAll(
-      new RegExp('(?<=tabindex="0"><code) class="inline snippet"(?=>)', "gm"),
-      "",
+      new RegExp('(?<=tabindex="0"><code class=")inline snippet(?=">)', "gm"),
+      "block w-full overflow-auto",
     )
     .replaceAll(new RegExp("(?<=<table)(?=>)", "gm"), ' class="table"')
     .replaceAll(new RegExp('<span class="line"></span>', "gm"), "");
 
-  console.log(String(file));
   return (
     <section className="p-8 pt-16">
       <Button
@@ -82,7 +87,14 @@ export default async function BlogPage({
       <div className="mt-2 flex flex-wrap items-center gap-2 text-muted-foreground">
         <span className="flex-1 text-nowrap">{metadata.author}</span>
         <Separator orientation="vertical" className="h-[1rem] w-0.5" />
-        {moment(metadata.postDate + " GMT").calendar()}
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <span>{moment(metadata.postDate + " GMT").calendar()}</span>
+          </TooltipTrigger>
+          <TooltipContent>
+            {moment(metadata.postDate + " GMT").format("LLLL")}
+          </TooltipContent>
+        </Tooltip>
       </div>
       <p className="!mt-1">{metadata.description}</p>
       <Separator className="mt-4" />
