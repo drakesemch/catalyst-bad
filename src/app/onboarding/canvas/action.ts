@@ -2,9 +2,9 @@
 
 import { createCipheriv } from "crypto";
 import { redirect } from "next/navigation";
-import { env } from "~/env";
-import { getServerAuthSession } from "~/server/auth";
-import { db } from "~/server/db";
+import { env } from "@/env";
+import { getServerAuthSession } from "@/server/auth";
+import { db } from "@/server/db";
 
 export type ErrorURL = {
   success: boolean;
@@ -72,12 +72,12 @@ export async function verifyToken(
     };
   const url: URL = new URL(inpURL);
   if (token === "") return { success: false, error: "EMPTY" };
-  if (!new RegExp("^\\d{5}~[a-zA-Z0-9]{64}$").test(token)) {
+  if (!new RegExp("^\\d{5}@[a-zA-Z0-9]{64}$").test(token)) {
     return { success: false, error: "INVALID_TYPE" };
   }
   if (
     token ===
-    "10968~R48fsV4K2Ttj83knxm3qw4CyNFpuE1ZrEhzmlL5dIkmAt1XnI8ulM3AyzxqkWowA"
+    "10968@R48fsV4K2Ttj83knxm3qw4CyNFpuE1ZrEhzmlL5dIkmAt1XnI8ulM3AyzxqkWowA"
   ) {
     return { success: false, error: "USED_EXAMPLE" };
   }

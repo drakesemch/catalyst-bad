@@ -5,11 +5,11 @@ import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cva } from "class-variance-authority";
 import { ArrowLeft, ChevronDown, Menu } from "lucide-react";
 
-import { cn } from "~/lib/utils";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "./button";
 
-import { Drawer, DrawerContent, DrawerTrigger } from "~/components/ui/drawer";
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { useEffect } from "react";
 import { Separator } from "./separator";
 

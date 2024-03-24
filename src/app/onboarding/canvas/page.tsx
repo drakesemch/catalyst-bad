@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import CanvasOnboardingClientPage from "./client";
-import { db } from "~/server/db";
-import { getServerAuthSession } from "~/server/auth";
+import { db } from "@/server/db";
+import { getServerAuthSession } from "@/server/auth";
 
 export default async function CanvasOnboardingPage() {
   const session = await getServerAuthSession();

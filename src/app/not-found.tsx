@@ -1,6 +1,6 @@
-import { Background } from "~/components/misc/effects";
-import { Nav } from "~/components/site/nav";
-import { Button } from "~/components/ui/button";
+import { Background } from "@/components/misc/effects";
+import { Nav } from "@/components/site/nav";
+import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
   return (

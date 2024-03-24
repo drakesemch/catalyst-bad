@@ -1,6 +1,6 @@
 import { Blob, File } from "buffer";
 import { UTApi } from "uploadthing/server";
-import { env } from "~/env";
+import { env } from "@/env";
 
 const utapi = new UTApi({
   apiKey: env.UPLOADTHING_SECRET,

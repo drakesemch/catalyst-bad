@@ -1,8 +1,8 @@
-// import { AppNav } from "~/components/site/app-nav";
+// import { AppNav } from "@/components/site/app-nav";
 
 import { PrismaClient } from "@prisma/client";
 import { redirect } from "next/navigation";
-import { getServerAuthSession } from "~/server/auth";
+import { getServerAuthSession } from "@/server/auth";
 
 export default async function AppLayout({
   children,

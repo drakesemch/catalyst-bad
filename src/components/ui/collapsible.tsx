@@ -1,7 +1,7 @@
 "use client";
 
 import * as CollapsiblePrimitive from "@radix-ui/react-collapsible";
-import { cn } from "~/lib/utils";
+import { cn } from "@/lib/utils";
 
 const Collapsible = CollapsiblePrimitive.Root;
 
@@ -16,7 +16,7 @@ const CollapsibleContent = ({
 }) => (
   <CollapsiblePrimitive.CollapsibleContent
     className={cn(
-      "[&[data-state='open']]:animate-slide-down [&[data-state='closed']]:animate-slide-up overflow-hidden",
+      "overflow-hidden [&[data-state='closed']]:animate-slide-up [&[data-state='open']]:animate-slide-down",
       className,
     )}
   >

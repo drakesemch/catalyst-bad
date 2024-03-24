@@ -1,5 +1,5 @@
-import { Background } from "~/components/misc/effects";
-import { Button } from "~/components/ui/button";
+import { Background } from "@/components/misc/effects";
+import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
   Blocks,
@@ -19,7 +19,7 @@ import {
   Percent,
   Webhook,
 } from "lucide-react";
-import { AppButton } from "~/components/site/app-button";
+import { AppButton } from "@/components/site/app-button";
 
 export default async function HomePage() {
   const features = [

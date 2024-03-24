@@ -1,4 +1,4 @@
-import { Button } from "~/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -6,10 +6,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card";
-import { storage } from "~/server/storage";
+} from "@/components/ui/card";
+import { storage } from "@/server/storage";
 import moment from "moment";
-import { Separator } from "~/components/ui/separator";
+import { Separator } from "@/components/ui/separator";
 import { ArrowRight } from "lucide-react";
 
 export const revalidate = 30;
