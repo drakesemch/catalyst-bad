@@ -266,7 +266,7 @@ function HamburgerMenu({
       >
         <DrawerTrigger asChild>
           <Button className="flex sm:hidden" size="icon" variant="secondary">
-            <Menu />
+            <Menu className="!size-[1rem]" />
           </Button>
         </DrawerTrigger>
         <DrawerContent>
@@ -311,12 +311,12 @@ function HamburgerMenu({
                     <div className="sticky bottom-0">
                       <Button
                         variant="ghost"
-                        className="w-full justify-start"
+                        className="flex w-full justify-start gap-2"
                         onClick={() => {
                           setMainMenu(true);
                         }}
                       >
-                        <ArrowLeft /> Go back
+                        <ArrowLeft className="!size-[1rem]" /> Go back
                       </Button>
                     </div>
                   </div>

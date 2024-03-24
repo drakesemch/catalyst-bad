@@ -23,11 +23,19 @@ export default function SignInPage() {
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-2 gap-2">
-          <Button variant="secondary" onClick={() => signIn("google")}>
+          <Button
+            className="flex gap-2"
+            variant="secondary"
+            onClick={() => signIn("google")}
+          >
             <GoogleLogo className="size-[1em]" />
             Google
           </Button>
-          <Button variant="secondary">
+          <Button
+            className="flex gap-2"
+            variant="secondary"
+            onClick={() => signIn("azure-ad")}
+          >
             <MicrosoftLogo className="size-[1em]" />
             Microsoft
           </Button>

@@ -29,7 +29,8 @@ export function Nav() {
           <>
             <HamburgerMenuItem>
               <HamburgerMenuTrigger>
-                <FlaskConical /> Catalyst <ArrowRight className="ml-auto" />
+                <FlaskConical className="!size-[1rem]" /> Catalyst{" "}
+                <ArrowRight className="ml-auto !size-[1rem]" />
               </HamburgerMenuTrigger>
               <HamburgerMenuContent>
                 <Button variant="ghost" className="justify-start" href="/">
@@ -60,7 +61,8 @@ export function Nav() {
             </HamburgerMenuItem>
             <HamburgerMenuItem>
               <HamburgerMenuTrigger>
-                <MessageCircle /> Contact <ArrowRight className="ml-auto" />
+                <MessageCircle className="!size-[1rem]" /> Contact{" "}
+                <ArrowRight className="ml-auto !size-[1rem]" />
               </HamburgerMenuTrigger>
               <HamburgerMenuContent>
                 <Button variant="ghost" className="justify-start">
@@ -78,7 +80,7 @@ export function Nav() {
               </HamburgerMenuContent>
             </HamburgerMenuItem>
             <HamburgerMenuLink href="/blog">
-              <Newspaper /> Blog
+              <Newspaper className="!size-[1rem]" /> Blog
             </HamburgerMenuLink>
             <AppButton className="mt-4 w-full" />
           </>
