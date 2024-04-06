@@ -52,7 +52,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
 const NavigationMenuItem = NavigationMenuPrimitive.Item;
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex gap-2 h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary/50 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50",
+  "group inline-flex gap-2 h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50",
 );
 
 const NavigationMenuTrigger = React.forwardRef<
@@ -80,7 +80,7 @@ const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      "left-0 top-0 w-[calc(1*20rem)] data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-[calc(2*15rem)]",
+      "left-0 top-0 data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute",
       className,
     )}
     {...props}
@@ -122,7 +122,7 @@ const NavigationMenuViewport = React.forwardRef<
   <div className={cn("absolute left-0 top-full flex justify-start")}>
     <NavigationMenuPrimitive.Viewport
       className={cn(
-        "origin-top-center relative mt-3.5 h-[var(--radix-navigation-menu-viewport-height)] overflow-hidden rounded-md bg-popover text-popover-foreground shadow-lg transition-all data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",
+        "origin-top-center relative mt-3.5 h-[var(--radix-navigation-menu-viewport-height)] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-lg transition-all data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",
         className,
       )}
       ref={ref}
@@ -163,20 +163,20 @@ function NavigationMenuGrid({
   className?: string;
 }) {
   return (
-    <div
-      className={cn(
-        `grid w-full grid-cols-1 md:grid-cols-${columns + 1} gap-2 md:grid-rows-${Math.ceil((children as React.ReactNode[]).length / columns)} p-4`,
-        className,
-      )}
-    >
-      <div
-        className={`flex flex-col content-stretch md:row-span-${Math.ceil((children as React.ReactNode[]).length / columns)} [&>*]:h-full`}
-      >
+    <div className="flex gap-2 p-4">
+      <div className="w-[20ch] flex-1">
         <NavigationMenuLink asChild>{header}</NavigationMenuLink>
       </div>
-      {React.Children.map(children, (child) => (
-        <NavigationMenuLink asChild>{child}</NavigationMenuLink>
-      ))}
+      <div
+        className={cn(
+          `grid grid-cols-${columns} max-h-[min(80ch,50vh)] w-[20ch] gap-2 overflow-auto`,
+          className,
+        )}
+      >
+        {React.Children.map(children, (child) => (
+          <NavigationMenuLink asChild>{child}</NavigationMenuLink>
+        ))}
+      </div>
     </div>
   );
 }

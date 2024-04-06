@@ -8,7 +8,7 @@ const inputVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-background/70 text-primary-foreground backdrop-blur-xl",
+        default: "bg-background/70 text-foreground backdrop-blur-xl",
         secondary: "bg-secondary/30 text-secondary-foreground backdrop-blur-xl",
       },
     },

@@ -141,7 +141,7 @@ export default async function HomePage() {
             </h1>
             <div className="mt-2 h-1 w-8 rounded-full bg-primary/50" />
             <p className="text-sm text-foreground/50">
-              Say hello to a reimagined canvas for students.
+              Expedite your learning experience with Catalyst.
             </p>
             <div className="flex gap-2">
               <Button variant="secondary" href="#features">

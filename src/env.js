@@ -67,6 +67,7 @@ export const env = createEnv({
     AZURE_AD_CLIENT_ID: z.string(),
     AZURE_AD_CLIENT_SECRET: z.string(),
     AZURE_AD_TENANT_ID: z.string(),
+    COHERE_API_KEY: z.string(),
   },
   client: {
     NEXT_PUBLIC_SENTRY_DSN: z
@@ -125,6 +126,7 @@ export const env = createEnv({
     NEXT_PUBLIC_POSTHOG_UI_HOST: process.env.NEXT_PUBLIC_POSTHOG_UI_HOST,
     UPLOADTHING_SECRET: process.env.UPLOADTHING_SECRET,
     UPLOADTHING_APP_ID: process.env.UPLOADTHING_APP_ID,
+    COHERE_API_KEY: process.env.COHERE_API_KEY,
   },
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
   emptyStringAsUndefined: true,

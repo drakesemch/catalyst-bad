@@ -44,4 +44,4 @@ yarn-error.log*
 .sentryclirc
 
 # Items saved in storage
-blogs
+no-save

@@ -1,5 +1,4 @@
 await import("./src/env.js");
-
 import { withSentryConfig } from "@sentry/nextjs";
 import { env } from "./src/env.js";
 
