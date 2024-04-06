@@ -124,7 +124,7 @@ export default function CanvasPage() {
   );
 }
 
-export function StatePicker() {
+function StatePicker() {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState<keyof typeof states | "">("");
 

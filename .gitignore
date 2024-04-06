@@ -8,9 +8,6 @@
 # testing
 /coverage
 
-# database
-/drizzle-migrations/
-
 # next.js
 /.next/
 /out/
@@ -43,5 +40,5 @@ yarn-error.log*
 # Sentry Config File
 .sentryclirc
 
-# Items saved in storage
+# Items not to be published
 no-save
