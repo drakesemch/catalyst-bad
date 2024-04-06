@@ -1,23 +1,23 @@
-import { storage } from "@/server/storage";
+import { storage } from "~/server/storage";
 
 import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "~/components/ui/separator";
 import moment from "moment";
 import { parseMeta } from "../helpers";
 import rehypeShiki from "@shikijs/rehype";
 import { notFound } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import { Button } from "~/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "~/components/ui/tooltip";
 
 export const revalidate = 30;
 

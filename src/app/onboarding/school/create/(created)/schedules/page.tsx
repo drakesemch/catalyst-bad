@@ -1,6 +1,6 @@
-import { db } from "@/server/db";
+import { db } from "~/server/db";
 import CreateSchoolPeriodsClient from "./client";
-import { getServerAuthSession } from "@/server/auth";
+import { getServerAuthSession } from "~/server/auth";
 import { redirect } from "next/navigation";
 
 export default async function CreateSchoolPeriods() {

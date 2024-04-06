@@ -1,11 +1,11 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { CardContent, CardFooter } from "@/components/ui/card";
+import { Button } from "~/components/ui/button";
+import { CardContent, CardFooter } from "~/components/ui/card";
 import { acceptDisclaimer } from "./action";
 
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
+import { Checkbox } from "~/components/ui/checkbox";
+import { Label } from "~/components/ui/label";
 import { ArrowRight, CircleSlash } from "lucide-react";
 import { useState } from "react";
 import { useFormStatus } from "react-dom";

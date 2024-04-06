@@ -1,9 +1,9 @@
-import "@/styles/globals.css";
+import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
 
-import { cn } from "@/lib/utils";
-import { Providers } from "@/components/misc/providers";
+import { cn } from "~/lib/utils";
+import { Providers } from "~/components/misc/providers";
 import type { Session } from "next-auth";
 
 const inter = Inter({

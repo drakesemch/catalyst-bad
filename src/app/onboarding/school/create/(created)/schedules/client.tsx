@@ -11,11 +11,11 @@ import {
   GripVertical,
   Plus,
 } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
 import { createSchedules } from "./action";
-import { Button } from "@/components/ui/button";
-import { CardContent, CardFooter } from "@/components/ui/card";
+import { Button } from "~/components/ui/button";
+import { CardContent, CardFooter } from "~/components/ui/card";
 import { useFormStatus } from "react-dom";
 import { useState } from "react";
 import {
@@ -31,8 +31,8 @@ import {
   CommandGroups,
   CommandInput,
   CommandItem,
-} from "@/components/ui/command";
-import { cn } from "@/lib/utils";
+} from "~/components/ui/command";
+import { cn } from "~/lib/utils";
 import {
   Popover,
   PopoverTrigger,
@@ -42,7 +42,7 @@ import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
-} from "@/components/ui/input-otp";
+} from "~/components/ui/input-otp";
 import moment from "moment";
 
 type Schedule = { id: string; name: string; abbr: string; periods: Period[] };

@@ -3,8 +3,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { getServerAuthSession } from "@/server/auth";
+} from "~/components/ui/card";
+import { getServerAuthSession } from "~/server/auth";
 import { redirect } from "next/navigation";
 import { headers } from "next/headers";
 import { pages } from "./pages";

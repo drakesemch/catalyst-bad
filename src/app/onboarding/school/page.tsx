@@ -2,23 +2,23 @@
 
 import { ArrowRight, Check, ChevronsUpDown, Plus } from "lucide-react";
 
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { cn } from "~/lib/utils";
+import { Button } from "~/components/ui/button";
 import {
   Command,
   // CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-} from "@/components/ui/command";
+} from "~/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "~/components/ui/popover";
 import { useEffect, useState } from "react";
 import { getSchools, selectSchool } from "./action";
-import { CardContent, CardFooter } from "@/components/ui/card";
+import { CardContent, CardFooter } from "~/components/ui/card";
 import { useFormStatus } from "react-dom";
 import type { School } from "@prisma/client";
 

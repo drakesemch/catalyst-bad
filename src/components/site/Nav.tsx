@@ -10,16 +10,16 @@ import {
   HamburgerMenuTrigger,
   HamburgerMenuContent,
   HamburgerMenuLink,
-} from "@/components/ui/navigation-menu";
+} from "~/components/ui/navigation-menu";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "~/components/ui/button";
 import {
   ArrowRight,
   FlaskConical,
   MessageCircle,
   Newspaper,
 } from "lucide-react";
-import { AppButton } from "@/components/site/app-button";
+import { AppButton } from "~/components/site/app-button";
 
 export function Nav() {
   return (

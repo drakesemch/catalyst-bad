@@ -1,8 +1,8 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { getServerAuthSession } from "@/server/auth";
-import { db } from "@/server/db";
+import { getServerAuthSession } from "~/server/auth";
+import { db } from "~/server/db";
 // import { pages } from "../../../../pages";
 
 export async function createPeriods(formData: FormData) {

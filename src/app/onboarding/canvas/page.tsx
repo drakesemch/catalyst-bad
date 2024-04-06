@@ -3,16 +3,16 @@
 import { ArrowRight, Plus } from "lucide-react";
 import { useEffect, useState } from "react";
 import { CircleCheck, CircleSlash } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
 import {
   verifyToken,
   type ErrorToken,
   saveCanvasCredentials,
   getSchoolCanvasURL,
 } from "./action";
-import { Button } from "@/components/ui/button";
-import { CardContent, CardFooter } from "@/components/ui/card";
+import { Button } from "~/components/ui/button";
+import { CardContent, CardFooter } from "~/components/ui/card";
 import { useFormStatus } from "react-dom";
 
 export default function CanvasPage() {

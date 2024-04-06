@@ -2,20 +2,20 @@
 
 import { ArrowRight, Check, ChevronsUpDown } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "~/components/ui/button";
 // import { selectSchool } from "./action";
-import { CardContent, CardFooter } from "@/components/ui/card";
+import { CardContent, CardFooter } from "~/components/ui/card";
 import { useFormStatus } from "react-dom";
 import type { Period } from "@prisma/client";
-import type { Course } from "@/server/canvas";
+import type { Course } from "~/server/canvas";
 import { useEffect, useState } from "react";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "~/components/ui/popover";
 import Fuse from "fuse.js";
-import { cn } from "@/lib/utils";
+import { cn } from "~/lib/utils";
 import {
   Command,
   CommandInput,
@@ -23,7 +23,7 @@ import {
   CommandGroup,
   CommandItem,
   CommandGroups,
-} from "@/components/ui/command";
+} from "~/components/ui/command";
 import { selectCourses } from "./action";
 
 export default function CoursesClientPage({

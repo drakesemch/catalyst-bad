@@ -1,4 +1,4 @@
-import { db } from "@/server/db";
+import { db } from "~/server/db";
 import ConfirmSchoolClientPage from "./client";
 
 export default async function ConfirmSchoolPage({

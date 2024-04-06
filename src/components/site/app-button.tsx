@@ -1,5 +1,5 @@
-import { getServerAuthSession } from "@/server/auth";
-import { Button } from "@/components/ui/button";
+import { getServerAuthSession } from "~/server/auth";
+import { Button } from "~/components/ui/button";
 
 export async function AppButton({ className }: { className?: string }) {
   const session = await getServerAuthSession();

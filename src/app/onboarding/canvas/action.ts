@@ -2,9 +2,9 @@
 
 import { createCipheriv } from "crypto";
 import { redirect } from "next/navigation";
-import { env } from "@/env";
-import { getServerAuthSession } from "@/server/auth";
-import { db } from "@/server/db";
+import { env } from "~/env";
+import { getServerAuthSession } from "~/server/auth";
+import { db } from "~/server/db";
 import { pages } from "../pages";
 
 // export type ErrorURL = {

@@ -2,9 +2,9 @@
 
 import { Check, CircleSlash } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "~/components/ui/button";
 import { selectSchool } from "./action";
-import { CardContent, CardFooter } from "@/components/ui/card";
+import { CardContent, CardFooter } from "~/components/ui/card";
 import { useFormStatus } from "react-dom";
 import type { School } from "@prisma/client";
 

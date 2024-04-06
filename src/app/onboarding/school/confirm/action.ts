@@ -2,8 +2,8 @@
 
 import { redirect } from "next/navigation";
 import { pages } from "../../pages";
-import { db } from "@/server/db";
-import { getServerAuthSession } from "@/server/auth";
+import { db } from "~/server/db";
+import { getServerAuthSession } from "~/server/auth";
 
 export async function selectSchool(formData: FormData) {
   const school = formData.get("school") as string;

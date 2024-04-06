@@ -1,12 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { TRPCReactProvider } from "@/trpc/react";
+import { TRPCReactProvider } from "~/trpc/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { TooltipProvider } from "../ui/tooltip";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
-import { env } from "@/env";
+import { env } from "~/env";
 import { SessionProvider } from "next-auth/react";
 import type { Session } from "next-auth";
 

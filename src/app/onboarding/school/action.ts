@@ -1,8 +1,8 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { db } from "@/server/db";
-import { getServerAuthSession } from "@/server/auth";
+import { db } from "~/server/db";
+import { getServerAuthSession } from "~/server/auth";
 
 export async function getSchools(inp: string) {
   const schools = await db.school.findMany({

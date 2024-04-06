@@ -1,4 +1,4 @@
-import { env } from "@/env";
+import { env } from "~/env";
 import { getServerAuthSession } from "./auth";
 import { db } from "./db";
 import { createDecipheriv } from "crypto";

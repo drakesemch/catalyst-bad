@@ -1,7 +1,7 @@
-import { AppNav } from "@/components/site/app-nav";
+import { AppNav } from "~/components/site/app-nav";
 
 import { redirect } from "next/navigation";
-import { getServerAuthSession } from "@/server/auth";
+import { getServerAuthSession } from "~/server/auth";
 import { pages } from "../onboarding/pages";
 
 export default async function AppLayout({

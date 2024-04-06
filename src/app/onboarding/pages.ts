@@ -1,5 +1,5 @@
-import { getServerAuthSession } from "@/server/auth";
-import { db } from "@/server/db";
+import { getServerAuthSession } from "~/server/auth";
+import { db } from "~/server/db";
 
 export async function pages() {
   const session = await getServerAuthSession();

@@ -10,9 +10,9 @@ import {
   HamburgerMenuTrigger,
   HamburgerMenuContent,
   HamburgerMenuLink,
-} from "@/components/ui/navigation-menu";
+} from "~/components/ui/navigation-menu";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "~/components/ui/button";
 import {
   ArrowRight,
   Book,
@@ -21,8 +21,8 @@ import {
   MessageCircle,
   Newspaper,
 } from "lucide-react";
-import { AppButton } from "@/components/site/app-button";
-import { canvas } from "@/server/canvas";
+import { AppButton } from "~/components/site/app-button";
+import { canvas } from "~/server/canvas";
 import moment from "moment";
 
 export async function AppNav() {

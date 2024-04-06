@@ -1,5 +1,5 @@
-// import { postRouter } from "@/server/api/routers/ex";
-import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
+// import { postRouter } from "~/server/api/routers/ex";
+import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
 import { authRouter } from "./routers/auth";
 import { canvasRouter } from "./routers/canvas";
 
