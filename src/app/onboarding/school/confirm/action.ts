@@ -7,7 +7,6 @@ import { getServerAuthSession } from "@/server/auth";
 
 export async function selectSchool(formData: FormData) {
   const school = formData.get("school") as string;
-  console.log("school", school);
   const userId = (await getServerAuthSession())?.user.id;
   if (!userId) {
     redirect("/auth");

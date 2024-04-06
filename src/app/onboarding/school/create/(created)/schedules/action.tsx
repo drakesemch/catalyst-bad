@@ -17,7 +17,6 @@ export async function createSchedules(formData: FormData) {
       endLocal: string;
     }[];
   }[] = [];
-  console.log(Object.entries(Object.fromEntries(formData.entries())));
 
   Object.entries(Object.fromEntries(formData.entries())).forEach(
     ([key, val]) => {
@@ -99,8 +98,6 @@ export async function createSchedules(formData: FormData) {
     },
   );
 
-  console.log(utcOffset, JSON.stringify(schedules));
-
   const session = await getServerAuthSession();
   if (!session) redirect("/auth");
 
@@ -139,7 +136,6 @@ export async function createSchedules(formData: FormData) {
         .utcOffset(utcOffset)
         .utc()
         .format("HH:mm:ss");
-      console.log(utcOffset, start, end);
       await db.periodTimes.create({
         data: {
           start: start,

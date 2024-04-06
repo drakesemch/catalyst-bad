@@ -71,7 +71,6 @@ export async function getSchoolCanvasURL(): Promise<string> {
       id: user.schoolId!,
     },
   }))!.canvasUrl;
-  console.log(canvasUrl);
   return canvasUrl;
 }
 

@@ -25,7 +25,6 @@ export default function CanvasPage() {
 
   useEffect(() => {
     (async () => {
-      console.log(await getSchoolCanvasURL());
       setURL(await getSchoolCanvasURL());
     })().catch((_) => {
       setURL("");

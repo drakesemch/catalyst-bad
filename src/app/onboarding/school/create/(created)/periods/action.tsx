@@ -52,7 +52,6 @@ export async function createPeriods(formData: FormData) {
       }
     },
   );
-  console.log("period", periods);
   const session = await getServerAuthSession();
   if (!session) redirect("/auth");
 

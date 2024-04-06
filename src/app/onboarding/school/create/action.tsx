@@ -87,7 +87,6 @@ export async function createSchool(formData: FormData) {
   });
 
   if (!form.success) {
-    console.log("no success", form.error.errors.flat(), state);
     return {
       success: false,
       error: form.error.errors.flat(),

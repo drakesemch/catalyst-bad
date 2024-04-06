@@ -33,6 +33,5 @@ export default async function CreateSchoolPeriods() {
   if (periods.length == 0) {
     redirect("/onboarding/school/create/periods");
   }
-  console.log(periods);
   return <CreateSchoolPeriodsClient periods={periods} />;
 }

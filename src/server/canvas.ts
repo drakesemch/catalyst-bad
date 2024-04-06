@@ -320,10 +320,6 @@ async function getCourseListWithSchedule(date?: string) {
     },
   })) as unknown as LinkedPeriod[];
 
-  console.log("schedule", schedule);
-
-  // console.log("db", periods);
-
   for (let idx = 0; idx < periods.length; idx++) {
     let period = periods[idx]!;
     const schedulePeriod = schedule?.periods.find(
@@ -355,8 +351,6 @@ async function getCourseListWithSchedule(date?: string) {
     }
     periods[idx] = period ?? null;
   }
-
-  console.log("map", periods);
 
   return periods;
 }

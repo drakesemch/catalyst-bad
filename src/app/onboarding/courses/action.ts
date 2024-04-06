@@ -18,7 +18,6 @@ export async function selectCourses(formData: FormData) {
   }
 
   for (const [periodId, valueId] of periods) {
-    console.log(periodId, valueId);
     await db.course.create({
       data: {
         user: {

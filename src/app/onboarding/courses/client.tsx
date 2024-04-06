@@ -135,16 +135,6 @@ function PeriodSelect({
           <PopoverContent className="max-h-[calc(var(--radix-popper-available-height)-1rem)] w-[var(--radix-popper-anchor-width)] overflow-auto p-0">
             <Command
               filter={(value, search) => {
-                console.log(
-                  fuse,
-                  fuse?.search(search),
-                  fuse?.search(search).find((result) => {
-                    return String(result.item.id) == value;
-                  }),
-                  fuse?.search(search).find((result) => {
-                    return String(result.item.id) == value;
-                  })?.score,
-                );
                 return (
                   fuse?.search(search).find((result) => {
                     return String(result.item.id) == value;
